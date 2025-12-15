@@ -111,7 +111,7 @@
         I am committed to developing my skills in areas such as database management, programming, and system analysis, while continuously learning new technologies to prepare for a successful career in the IT industry. </p>
 
         <div class="btn-box">
-            <a href="#" class="btn">Read More!</a>
+            <a href="#" class="btn">View More!</a>
         </div>
     </div>
 </section>
@@ -218,10 +218,10 @@
         </div>
 
         <div class="skill-right">
-            <div class="img-box" style="background-image: url('comp.webp');"></div>
-            <div class="img-box" style="background-image: url('com.jpg');"></div>
+            <div class="img-box" style="background-image: url('comp2.webp');"></div>
+            <div class="img-box" style="background-image: url('comm.webp');"></div>
             <div class="img-box" style="background-image: url('team.webp');"></div>
-            <div class="img-box" style="background-image: url('prob.webp');"></div>
+            <div class="img-box" style="background-image: url('solve.webp');"></div>
         </div>
     </div>
 </section>
@@ -237,18 +237,19 @@
     <div class="container">
         <div class="fillter-buttons">
             <button class="btn" data-filter="all">All</button>
-            <button class="btn" data-filter=".product">Intramurals</button>
-            <button class="btn" data-filter=".inter">Organization</button>
-            <button class="btn" data-filter=".web">Sports</button>
+            <button class="btn" data-filter=".events">Events</button>
+            <button class="btn" data-filter=".act">Activities</button>
+            <button class="btn" data-filter=".sports">Sports</button>
         </div>
 
         <div class="portfolio-gallery">
-            <div class="port-box mix product">
+            <div class="port-box mix events">
                 <div class="port-image">
                     <img src="athena.jpg" alt="">
                 </div>
+                
                 <div class="port-content">
-                    <h3>Intramurals</h3>
+                    <h3>Events</h3>
                     <p>
                         Here are some of my selected works that showcase my creativity and design skills. 
                         These projects highlight my ability to create visually appealing and well-structured designs for different purposes.
@@ -257,12 +258,12 @@
                 </div>
             </div>
 
-            <div class="port-box mix product">
+            <div class="port-box mix act">
                 <div class="port-image">
                     <img src="2.jpg" alt="">
                 </div>
                 <div class="port-content">
-                    <h3>Intramurals</h3>
+                    <h3>Activities</h3>
                     <p>
                         Here are some of my selected works that showcase my creativity and design skills. 
                         These projects highlight my ability to create visually appealing and well-structured designs for different purposes.
@@ -271,12 +272,12 @@
                 </div>
             </div>
 
-            <div class="port-box mix inter">
+            <div class="port-box mix sports">
                 <div class="port-image">
                     <img src="3.jpg" alt="">
                 </div>
                 <div class="port-content">
-                    <h3>Intramurals</h3>
+                    <h3>Sports</h3>
                     <p>
                         Here are some of my selected works that showcase my creativity and design skills. 
                         These projects highlight my ability to create visually appealing and well-structured designs for different purposes.
@@ -348,7 +349,7 @@
         <div class="btn-box formBtn">
             <button type="submit" class="btn">Send Message</button>
         </div>
-
+        
     </form>
 </section>
 
@@ -448,6 +449,66 @@ navLinks.forEach(link => {
 });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".contant form");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); // stop page reload
+
+        const inputs = form.querySelectorAll("input, textarea");
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            alert("Kindly complete all fields.");
+            return;
+        }
+
+        // If all fields are filled
+        alert("Message sent successfully!");
+        form.reset();
+    });
+});
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Select the Read More button
+    const readMoreBtn = document.querySelector(".about .btn");
+
+    readMoreBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // stop default jump to top
+
+        // Scroll smoothly to the next section
+        const nextSection = document.querySelector("#skills"); // change to your next section id
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const readMoreBtn = document.querySelector(".about .btn");
+
+    readMoreBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const nextSection = readMoreBtn.closest("section").nextElementSibling;
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+</script>
 
 </body>
 </html>

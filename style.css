@@ -213,7 +213,7 @@ section{
 .change-text h3 .word{
     position: absolute;
     display: flex;
-    opacity: 1;
+    opacity: 0;
 }
 
 .change-text h3 .word .letter{
@@ -443,6 +443,7 @@ section{
     color: #fdfdfd;
     font-weight: 300;
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .info-about1,
@@ -592,7 +593,7 @@ section{
 /* Right-side image boxes */
 .skill-right {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+    grid-template-columns: repeat(2, 1fr); /* 3x3 grid */
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -609,7 +610,7 @@ section{
 
 
 .skill-bar{
-    margin-bottom: 2.3rem;
+    margin-bottom: 2.1rem;
 }
 
 .skill-main h2{
@@ -626,7 +627,7 @@ section{
 }
 
 .skill-left .skill-bar .bar{
-    width: 100%;
+    width: 85%;
     height: 10px;
     background-color: var(--bg-color);
     border-radius: 25px;
@@ -646,22 +647,22 @@ section{
 
 .skill-bar .bar .computer{
     width: 80%;
-    animation: html 2s;
+    animation: computer 2s;
 }
 
 .skill-bar .bar .communication{
     width: 90%;
-    animation: figma 3s;
+    animation: communication 3s;
 }
 
 .skill-bar .bar .teamwork{
     width: 70%;
-    animation: javascript 4s;
+    animation: teamwork 4s;
 }
 
 .skill-bar .bar .solving{
     width: 75%;
-    animation: css 5s;
+    animation: solving 5s;
 }
 
 /* Right-side large square image boxes */
@@ -981,39 +982,39 @@ footer a i{
     }
 }
 
-@keyframes html{
+@keyframes computer{
     0%{
         width: 0%;
     }
     100%{
-        width: 45%;
+        width: 80%;
     }
 }
 
-@keyframes figma{
+@keyframes communication{
     0%{
         width: 0%;
     }
     100%{
-        width: 50%;
+        width: 90%;
     }
 }
 
-@keyframes javascript{
+@keyframes teamwork{
     0%{
         width: 0%;
     }
     100%{
-        width: 10%;
+        width: 70%;
     }
 }
 
-@keyframes css{
+@keyframes solving{
     0%{
         width: 0%;
     }
     100%{
-        width: 40%;
+        width: 75%;
     }
 }
 
@@ -1181,6 +1182,39 @@ footer a i{
     }
     
 }
+
+/* Mobile responsive menu */
+@media (max-width: 768px) {
+    .navlist {
+        position: fixed;
+        top: 70px; /* below header */
+        right: -100%; /* hide offscreen */
+        height: 100vh;
+        width: 250px;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 2rem;
+        gap: 20px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .navlist.active {
+        right: 0; /* show menu */
+    }
+
+    #menu-icon {
+        display: block; /* show menu icon */
+    }
+
+    .navlist a {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+}
+
 
 
 

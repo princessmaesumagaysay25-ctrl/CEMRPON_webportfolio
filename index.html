@@ -122,7 +122,7 @@
 <section id="services" class="services">
     <div class="main-text">
         <span>what i will do for you</span>
-        <h2>Our Services</h2>
+        <h2>Capabilities</h2>
     </div>
 
     <div class="section-services">
@@ -130,8 +130,8 @@
             <i class='bx bxs-layer service-icon'></i>
             <h3>Graphic Designer</h3>
             <p>
-                I create visually compelling designs that communicate ideas clearly and creatively. My work focuses on balance, color harmony, and strong visual impact.
-            </p>
+                I am capable of creating visually appealing designs using Canva for social media posts, presentations, and digital content.
+                I can apply design principles such as layout, color harmony, and typography to produce clean and engaging visuals suited for different purposes.
             <div class="btn-box service-btn">
                 <a href="#" class="btn">Read More!</a>
             </div>
@@ -143,8 +143,8 @@
             <i class='bx bx-code-alt service-icon'></i>
             <h3>Graphic Designer</h3>
             <p>
-                I create visually compelling designs that communicate ideas clearly and creatively. My work focuses on balance, color harmony, and strong visual impact.
-            </p>
+                I have the ability to develop digital products, including posters, simple branding materials, and downloadable content.
+                From concept to final output, I can transform ideas into polished digital assets that meet user or project requirements.
             <div class="btn-box service-btn">
                 <a href="#" class="btn">Read More!</a>
             </div>
@@ -156,7 +156,8 @@
             <i class='bx bx-desktop service-icon'></i>
             <h3>Graphic Designer</h3>
             <p>
-                I create visually compelling designs that communicate ideas clearly and creatively. My work focuses on balance, color harmony, and strong visual impact.
+               I am capable of drawing and illustrating original concepts, which allows me to add a personal and creative touch to my designs.
+               This ability helps me generate unique visuals and adapt artistic ideas into digital formats for various creative projects.
             </p>
             <div class="btn-box service-btn">
                 <a href="#" class="btn">Read More!</a>
@@ -510,5 +511,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const header = document.querySelector("header");
+
+    menuIcon.addEventListener("click", () => {
+        header.classList.toggle("active");
+    });
+
+    // Close header when clicking a nav link
+    document.querySelectorAll(".navlist a").forEach(link => {
+        link.addEventListener("click", () => {
+            header.classList.remove("active");
+        });
+    });
+});
+
+</script>
 </body>
 </html>

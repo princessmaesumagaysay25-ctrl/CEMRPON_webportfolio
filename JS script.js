@@ -1,40 +1,51 @@
-let words = document.querySelectorAll(".word");
-words.forEach((word)=>{
-    let letters = word.textContent.split("");
-    word.textContent="";
-    letters.forEach((letter)=>{
-        let span = document.createElement("span");
+
+const word = document.querySelectorAll(".change-text .word");
+let currentWordIndex = 0;
+let maxWordIndex = words.length - 1;
+
+word.forEach(word => {
+    const letters = word.textContent.split("");
+    word.textContent = "";
+    letters.forEach(letter => {
+        const span = document.createElement("span");
         span.textContent = letter;
         span.className = "letter";
         word.append(span);
     });
 });
 
-let currentWordIndex = 0;
-let maxWordIndex = words.length -1;
-words[currentWordIndex].style.opacity = "1";
+word[currentWordIndex].style.opacity = "1";
 
-let changeText = ()=>{
-    let currentWord = words[currentWordIndex];
-    let nextWord = currentWordIndex === maxWordIndex ? words[0] :  words[currentWordIndex + 1];
+function changeWord() {
+    const currentWord = words[currentWordIndex];
+    const nextWord =
+        currentWordIndex === maxWordIndex
+            ? words[0]
+            : words[currentWordIndex + 1];
 
-    Array.from(currentWord.children).forEach((letter,i)=>{
-        setTimeout(()=>{
+    // animate out
+    currentWord.querySelectorAll(".letter").forEach((letter, i) => {
+        setTimeout(() => {
             letter.className = "letter out";
-        },i * 80);
+        }, i * 80);
     });
-    nextWord.style.opacity="1";
-    Array.from(nextWord.children).forEach((letter,i)=>{
-        letter.className = "letter behind";
-        setTimeout(()=>{
-            letter.className = "letter in";
-        },340 + i * 80);
-    });
-    currentWordIndex = currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
-};
 
-changeText();
-setInterval(changeText,3000);
+    nextWord.style.opacity = "1";
+
+    // animate in
+    nextWord.querySelectorAll(".letter").forEach((letter, i) => {
+        letter.className = "letter behind";
+        setTimeout(() => {
+            letter.className = "letter in";
+        }, 340 + i * 80);
+    });
+
+    currentWordIndex =
+        currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+}
+
+setInterval(changeWord, 3000);
+
 
 
 

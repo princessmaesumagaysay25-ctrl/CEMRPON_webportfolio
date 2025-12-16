@@ -52,15 +52,15 @@
             </div>
 
             <div class="btn-box">
-                <a href="#" class="btn">Welcome!</a>
-                <a href="#" class="btn">Shessshhh.</a>
+                <a href="#" class="btn">Download CV</a>
+                <a href="#contact" class="btn">Hire Me Now!</a>
             </div>
 
             <div class="social-icons">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-dribbble'></i></a>
+                <a href="https://www.facebook.com/share/17ewQvyGUm/"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/she_zano"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.tiktok.com/@shecmprn?_r=1&_t=ZS-92GqBcAjOMb"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.youtube.com/@sherylmaecempron"><i class='bx bxl-youtube'></i></a>
             </div>
 
         </div>
@@ -530,5 +530,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 </script>
+
+
+</section> <!-- end of #contact -->
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("YOUR_USER_ID");
+</script>
+
+<!-- Form submission script -->
+<script>
+document.querySelector('#contact form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+        name: this.querySelector('input[placeholder="Your Name"]').value,
+        email: this.querySelector('input[placeholder="Your Email"]').value,
+        address: this.querySelector('input[placeholder="Your Address"]').value,
+        phone: this.querySelector('input[placeholder="Phone Number"]').value,
+        message: this.querySelector('textarea').value
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            alert("Message sent successfully!");
+            document.querySelector('#contact form').reset();
+        }, function(error) {
+            alert("Failed to send message. Try again.");
+        });
+});
+</script>
+</body>
+</html>
+
 </body>
 </html>

@@ -862,12 +862,12 @@ section{
 
 /* 2nd portfolio item */
 .port-box:nth-child(2) .port-image::after {
-    background-image: url("7.jpeg");
+    background-image: url("3-2.jpeg");
 }
 
 /* 3rd portfolio item */
 .port-box:nth-child(3) .port-image::after {
-    background-image: url("3-2.jpg");
+    background-image: url("7.jpg");
 }
 
 /* 4th portfolio item */
@@ -951,6 +951,19 @@ footer a i{
     font-size: 1rem;
     color: var(--secon-bg-color);
 }
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff4dff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background 0.2s;
+}
+
 
 
 
@@ -1184,6 +1197,59 @@ footer a i{
     }
     
 }
+
+/* ===== FORCE HEADER VISIBLE ON MOBILE SCROLL ===== */
+@media (max-width: 768px) {
+
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    z-index: 9999 !important;
+    background-color: #1f2f36; /* same as your theme */
+  }
+
+  /* Prevent content hiding under header */
+  section:first-of-type {
+    margin-top: 80px;
+  }
+
+  /* Mobile nav default hidden */
+  .navlist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: transparent;
+
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    font: var(--font-neon-text-shadow)
+  }
+
+  /* Show nav when menu icon clicked */
+  header.active .navlist {
+    display: flex;
+  }
+
+  /* Make menu icon always visible */
+  #menu-icon {
+    display: block !important;
+    font-size: 28px;
+    cursor: pointer;
+  }
+}
+
+
+
 
 
 
